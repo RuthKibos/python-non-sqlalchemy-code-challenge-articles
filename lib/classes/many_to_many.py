@@ -49,7 +49,7 @@ class Author:
         return list(set(magazine.category for magazine in self.magazines()))
 
 class Magazine:
-    all_magazines = []  # Class variable to store all magazines
+    all_magazines = [] 
 
     def __init__(self, name, category):
         if not isinstance(name, str) or not (2 <= len(name) <= 16):
@@ -59,8 +59,8 @@ class Magazine:
         
         self._name = name
         self._category = category
-        Magazine.all_magazines.append(self)  # Add the new magazine to the list of all magazines
-
+        Magazine.all_magazines.append(self) 
+        
     @property
     def name(self):
         return self._name
@@ -93,4 +93,3 @@ class Magazine:
     def contributing_authors(self):
         authors = [article.author for article in self.articles()]
         return list(set(author for author in authors if authors.count(author) > 2))
-        
